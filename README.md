@@ -16,7 +16,7 @@
 | 1 |   Todun   | O       |    m    |         |
 
 
-           
+​           
 3. delete EITs with a checkedbox and button
 4. Edit a record by clicking on the row and populating the form with record values
 
@@ -35,13 +35,25 @@ dob         [_enter date of birth_]
 
 
 # The Task
-We are building an EIT management application - create an EIT record, 
-update it and delete it. The details we are collecting are first name, 
-last name, gender and date of birth. The records must be displayed in a 
-table and we must be able to delete them in bulk by selecting check boxes and 
-clicking a DELETE button - I've attached an image of the board sketch I did yesterday. 
-Also, remove the insecure package and use meteor methods on the server side to make 
-your application secure. Also, support user accounts.
+We are building an EIT management application - 
+
+* create an EIT record, 
+* update it and 
+* delete it. 
+
+The details we are collecting are 
+* first name, 
+* last name, 
+* gender and 
+* date of birth. 
+The records must be displayed in 
+* a table and 
+* we must be able to delete them in bulk by selecting check boxes and clicking a DELETE button  
+Also, 
+* remove the insecure package and 
+* use meteor methods on the server side to make your application secure. 
+Also, 
+* support user accounts.
 
 # Application Structure
 You may structure your app however you like, but it's highly recommended that you use 
@@ -91,7 +103,7 @@ service. Here are the steps to host your app:
 
 # Question
 ![alt text](public/images/meteor-hw.jpg "Meteor Assignment Question")
- 
+
 # References
 1. [Markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables)
 2. [Meteor Special directories](https://guide.meteor.com/structure.html#special-directories)
