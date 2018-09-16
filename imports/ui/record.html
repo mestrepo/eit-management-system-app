@@ -1,9 +1,13 @@
 <template name="record">
     <li class="{{#if checked}}checked{{/if}}">
+        <th>{{firstname}}</th>
+        <th>{{surname}}</th>
+        <th>{{gender}}</th>
+        <th>{{dob}}</th>
         <button class="delete">&times;</button>
 
         <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
 
-        <span class="text">{{text}}</span>
+        <!--<span class="text">{{text}}</span>-->
     </li>
 </template>
