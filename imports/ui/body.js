@@ -27,16 +27,8 @@ Template.body.events({
         const gender = target.gender.value;
         const dob = target.dob.value;
 
-        // Insert a task into the collection
-        Records.insert({
-            firstname,
-            surname,
-            gender,
-            dob,
-            createdAt: new Date(), // current time
-            owner: Meteor.userId(),
-            username: Meteor.user().username,
-        });
+        // Insert a record into the collection
+        Meteor.call('records.insert', firstname, surname, gender, dob);
 
         // Clear form
         target.firstname.value = '';
