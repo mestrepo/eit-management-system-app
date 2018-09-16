@@ -4,6 +4,13 @@ import { check } from 'meteor/check';
 
 export const Records = new Mongo.Collection('records');
 
+if (Meteor.isServer) {
+    // This code only runs on the server
+    Meteor.publish('records', function tasksPublication() {
+        return Records.find();
+    });
+}
+
 Meteor.methods({
     'records.insert'(firstname, surname, gender, dob) {
         // input validation
