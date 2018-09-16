@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import {Template} from 'meteor/templating';
 
 import {Records} from '../api/records.js';
@@ -33,6 +34,8 @@ Template.body.events({
             gender,
             dob,
             createdAt: new Date(), // current time
+            owner: Meteor.userId(),
+            username: Meteor.user().username,
         });
 
         // Clear form
