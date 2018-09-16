@@ -50,14 +50,16 @@ dob         [_enter date of birth_]
 
 The records must be displayed in 
 - [x] a table and 
-- [ ] delete them in bulk by *selecting check boxes* and clicking a DELETE button  
-
+- [ ] delete them in bulk by   
+    - [ ] *selecting check boxes* and 
+    - [ ] clicking a DELETE button
+      
 Also, 
 - [ ] remove the insecure package and 
 - [ ] use meteor methods on the server side to make your application secure. 
 
 Also, 
-- [ ] support user accounts.
+- [x] support user accounts.
 
 # Application Structure
 You may structure your app however you like, but it's highly recommended that you use 
