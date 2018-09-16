@@ -43,11 +43,23 @@ Meteor.methods({
     'records.remove'(recordId) {
         check(recordId, String);
 
+        const record = Records.findOne(recordId);
+        if (record.private && record.owner !== Meteor.userId()) {
+            // If the record is private, make sure only the owner can delete it
+            throw new Meteor.Error('not-authorized');
+        }
+
         Records.remove(recordId);
     },
     'records.setChecked'(recordId, setChecked) {
         check(recordId, String);
         check(setChecked, Boolean);
+
+        const record = Records.findOne(recordId);
+        if (record.private && record.owner !== Meteor.userId()) {
+            // If the record is private, make sure only the owner can check it off
+            throw new Meteor.Error('not-authorized');
+        }
 
         Records.update(recordId, { $set: { checked: setChecked } });
     },
