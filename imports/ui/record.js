@@ -18,4 +18,7 @@ Template.record.events({
     'click .delete'() {
         Meteor.call('records.remove', this._id);
     },
+    'click .toggle-private'() {
+        Meteor.call('records.setPrivate', this._id, !this.private);
+    },
 });
