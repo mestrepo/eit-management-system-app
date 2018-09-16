@@ -45,4 +45,17 @@ Meteor.methods({
 
         Records.update(recordId, { $set: { checked: setChecked } });
     },
+    'records.setPrivate'(recordId, setToPrivate) {
+        check(recordId, String);
+        check(setToPrivate, Boolean);
+
+        const record = Records.findOne(recordId);
+
+        // Make sure only the record owner can make a record private
+        if (record.owner !== Meteor.userId()) {
+            throw new Meteor.Error('not-authorized');
+        }
+
+        Records.update(recordId, { $set: { private: setToPrivate } });
+    },
 });
