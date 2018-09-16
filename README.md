@@ -56,7 +56,7 @@ The records must be displayed in
       
 Also, 
 - [x] remove the insecure package and 
-- [ ] use meteor methods on the server side to make your application secure. 
+- [x] use meteor methods on the server side to make your application secure. 
 
 Also, 
 - [x] support user accounts.
