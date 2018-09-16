@@ -6,8 +6,14 @@ export const Records = new Mongo.Collection('records');
 
 if (Meteor.isServer) {
     // This code only runs on the server
+    // Only publish records that are public or belong to the current user
     Meteor.publish('records', function recordsPublication() {
-        return Records.find();
+        return Records.find({
+            $or: [
+                { private: { $ne: true } },
+                { owner: this.userId },
+            ],
+        });
     });
 }
 
