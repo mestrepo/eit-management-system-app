@@ -1,0 +1,30 @@
+<body>
+<div class="container">
+    <header>
+        <h1>EIT Management System</h1>
+    </header>
+
+    <ul>
+        {{#each records}}
+            {{> record}}
+        {{/each}}
+    </ul>
+</div>
+</body>
+
+<template name="record">
+    <table style="width:100%">
+        <tr>
+            <th>firstname</th>
+            <th>surname</th>
+            <th>gender</th>
+            <th>dob</th>
+        </tr>
+        <tr>
+            <th>{{firstname}}</th>
+            <th>{{surname}}</th>
+            <th>{{gender}}</th>
+            <th>{{dob}}</th>
+        </tr>
+    </table>
+</template>
