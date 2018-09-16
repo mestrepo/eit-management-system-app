@@ -17,10 +17,10 @@ Template.body.events({
 
         // Get value from form element
         const target = event.target;
-        const firstname = target.text.value;
-        const surname = target.text.value;
-        const gender = target.text.value;
-        const dob = target.text.value;
+        const firstname = target.firstname.value;
+        const surname = 'target.surname.value';
+        const gender = 'target.text.value';
+        const dob = 'target.text.value';
 
         // Insert a task into the collection
         Records.insert({
@@ -32,6 +32,6 @@ Template.body.events({
         });
 
         // Clear form
-        target.text.value = '';
+        target.firstname.value = '';
     },
 });
