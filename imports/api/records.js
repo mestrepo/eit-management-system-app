@@ -5,8 +5,12 @@ import { check } from 'meteor/check';
 export const Records = new Mongo.Collection('records');
 
 Meteor.methods({
-    'records.insert'(text) {
-        check(text, String);
+    'records.insert'(firstname, surname, gender, dob) {
+        // input validation
+        check(firstname, String);
+        check(surname, String);
+        check(gender, String);
+        check(dob, String);
 
         // Make sure the user is logged in before inserting a record
         if (! Meteor.userId()) {
