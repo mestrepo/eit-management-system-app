@@ -55,7 +55,7 @@ The records must be displayed in
     - [ ] clicking a DELETE button
       
 Also, 
-- [ ] remove the insecure package and 
+- [x] remove the insecure package and 
 - [ ] use meteor methods on the server side to make your application secure. 
 
 Also, 
