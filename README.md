@@ -60,6 +60,10 @@ Also,
 
 Also, 
 - [x] support user accounts.
+- [ ] deploy to server
+- [ ] make EIT table aligned with content
+- [ ] improve design
+- [ ] refactor un-used CSS
 
 # Application Structure
 You may structure your app however you like, but it's highly recommended that you use 
