@@ -5,33 +5,28 @@
 
         <form class="new-record">
             <input type="text" name="firstname" placeholder="Type your firstname" />
-            <input type="text" name="surname" placeholder="Type your surname" />
-            <input type="text" name="gender" placeholder="Type your gender" />
-            <input type="text" name="dob" placeholder="Type your dob" />
         </form>
     </header>
 
     <ul>
-        {{#each records}}
-            {{> record}}
-        {{/each}}
+        <table>
+            <tr>
+                <th>firstname</th>
+                <th>surname</th>
+                <th>gender</th>
+                <th>dob</th>
+            </tr>
+            {{#each records}}
+                <tr>{{> record}}</tr>
+            {{/each}}
+        </table>
     </ul>
 </div>
 </body>
 
 <template name="record">
-    <table style="width:100%">
-        <tr>
-            <th>firstname</th>
-            <th>surname</th>
-            <th>gender</th>
-            <th>dob</th>
-        </tr>
-        <tr>
-            <th>{{firstname}}</th>
-            <th>{{surname}}</th>
-            <th>{{gender}}</th>
-            <th>{{dob}}</th>
-        </tr>
-    </table>
+        <th>{{firstname}}</th>
+        <th>{{surname}}</th>
+        <th>{{gender}}</th>
+        <th>{{dob}}</th>
 </template>
