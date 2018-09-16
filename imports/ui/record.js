@@ -21,4 +21,7 @@ Template.record.events({
     'click .toggle-private'() {
         Meteor.call('records.setPrivate', this._id, !this.private);
     },
+    'click .delete-selected-record button'() {
+        Meteor.call('records.remove', this._id);
+    },
 });
