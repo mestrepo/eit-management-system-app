@@ -6,6 +6,10 @@ import {Records} from '../api/records.js';
 import './record.js';
 import './body.html';
 
+Template.body.onCreated(function bodyOnCreated() {
+    Meteor.subscribe('records');
+});
+
 Template.body.helpers({
     records() {
         // Show newest tasks at the top
