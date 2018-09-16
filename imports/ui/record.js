@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
 import { Records } from '../api/records.js';
@@ -6,12 +7,9 @@ import './record.html';
 
 Template.record.events({
     'click .toggle-checked'() {
-        // Set the checked property to the opposite of its current value
-        Records.update(this._id, {
-            $set: { checked: ! this.checked },
-        });
+        Meteor.call('records.setChecked', this._id, !this.checked);
     },
     'click .delete'() {
-        Records.remove(this._id);
+        Meteor.call('records.remove', this._id);
     },
 });
