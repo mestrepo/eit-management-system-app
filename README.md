@@ -23,10 +23,10 @@
 
 # OUTPUT
 
-first name  [_enter first name_]
-surname     [_enter your last name_]
-gender      [_enter your gender_]
-dob         [_enter date of birth_]
+first name  	[_enter first name_]
+surname     	[_enter your last name_]
+gender      	[_enter your gender_]
+dob         	[_enter date of birth_]
 
 | # | Firstname | Surname | gender  | dob        |
 | - | --------- | :------ | :-----: | :----:     |
