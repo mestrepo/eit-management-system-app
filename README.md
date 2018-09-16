@@ -35,25 +35,29 @@ dob         [_enter date of birth_]
 
 
 # The Task
-We are building an EIT management application - 
 
-* create an EIT record, 
-* update it and 
-* delete it. 
+#### We are building an EIT management application - 
 
-The details we are collecting are 
-* first name, 
-* last name, 
-* gender and 
-* date of birth. 
+- [x] create an EIT record, 
+- [x] update it and 
+- [x] delete it. 
+
+#### The details we are collecting are 
+- [x] first name, 
+- [x] last name, 
+- [x] gender and 
+- [x] date of birth. 
+
 The records must be displayed in 
-* a table and 
-* we must be able to delete them in bulk by selecting check boxes and clicking a DELETE button  
+- [x] a table and 
+- [ ] delete them in bulk by *selecting check boxes* and clicking a DELETE button  
+
 Also, 
-* remove the insecure package and 
-* use meteor methods on the server side to make your application secure. 
+- [ ] remove the insecure package and 
+- [ ] use meteor methods on the server side to make your application secure. 
+
 Also, 
-* support user accounts.
+- [ ] support user accounts.
 
 # Application Structure
 You may structure your app however you like, but it's highly recommended that you use 
@@ -65,7 +69,8 @@ the same structure as the simple-todos app.
 # Hosting
 You would be hosting this app with meteor-now and mlab. meteor-now is a package 
 that hosts your app and gives you a URL, and mlab is a MongoDB Database-as-a-Service 
-service. Here are the steps to host your app:
+service. Here are the steps to host your app
+
 1. Update your node to at least 7.10.0. You can check your node version with node -v 
     and update node with nvm install 7.10.0.
 2. Create an account on mlab. These are the instructions:
