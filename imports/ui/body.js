@@ -6,7 +6,8 @@ import './body.html';
 
 Template.body.helpers({
     records() {
-        return Records.find({});
+        // Show newest tasks at the top
+        return Records.find({}, { sort: { createdAt: -1 } });
     },
 });
 
