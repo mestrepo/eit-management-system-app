@@ -39,10 +39,10 @@ dob         	[_enter date of birth_]
 #### We are building an EIT management application - 
 
 - [x] create an EIT record, 
-- [ ] update it and 
-    - [ ] add an update button
-    - [ ] ensure only one record is checked
-    - [ ] type record into form to replace record        
+- [x] update it and 
+    - [x] add an update button
+    - [x] ensure only one record is checked
+    - [x] type record into form to replace record        
 - [x] delete it. 
 
 #### The details we are collecting are 
