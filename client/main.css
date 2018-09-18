@@ -106,7 +106,7 @@ li.private {
   border-color: #ddd;
 }
 
-header .delete-selected-record {
+header .delete-checked {
   float: right;
 }
 
