@@ -20,6 +20,7 @@ Template.body.helpers({
         if (instance.checkedState.get('deleteChecked')) {
             instance.checkedState.set('deleteChecked', false); // reset delete button checked state
             const checkedRecords = Records.find({ 'checked': true });
+            // securely delete all check boxed records
             checkedRecords.forEach(function(cr) {
                 Meteor.call('records.remove', cr._id);
             });
