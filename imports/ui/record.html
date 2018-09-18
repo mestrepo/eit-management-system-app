@@ -4,12 +4,12 @@
         <th>{{surname}}</th>
         <th>{{gender}}</th>
         <th>{{dob}}</th>
-        <button class="delete">&times;</button>
-
-        <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
-        <input type="button" id="edit-records" value="edit" />
 
         {{#if isOwner}}
+            <button class="delete">&times;</button>
+
+            <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+            <input type="button" id="edit-records" value="edit" />
             <button class="toggle-private">
                 {{#if private}}
                     Private
