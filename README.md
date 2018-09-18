@@ -53,9 +53,9 @@ dob         	[_enter date of birth_]
 
 The records must be displayed in 
 - [x] a table and 
-- [ ] delete them in bulk by   
-    - [ ] *selecting check boxes* and 
-    - [ ] clicking a DELETE button
+- [x] delete them in bulk by   
+    - [x] *selecting check boxes* and 
+    - [x] clicking a DELETE button
       
 Also, 
 - [x] remove the insecure package and 
@@ -63,7 +63,7 @@ Also,
 
 Also, 
 - [x] support user accounts.
-- [ ] deploy to server
+- [x] deploy to server
 - [ ] make EIT table aligned with content
 - [ ] improve design
 - [ ] refactor un-used CSS
