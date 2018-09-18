@@ -67,4 +67,26 @@ Template.body.events({
     'click .delete-checked': function(event, instance){
         instance.checkedState.set('deleteChecked', event.target.name === 'delete'); // set delete state
     },
+    'click #edit-records'(event) {
+        // Prevent default browser form submit
+        event.preventDefault();
+
+        // Get value from form element
+        const target = document.getElementById('new-record-for-edit');
+
+        // set the values
+        const firstname = target.firstname.value;
+        const surname = target.surname.value;
+        const gender = target.gender.value;
+        const dob = target.dob.value;
+
+        // Insert a record into the collection
+        Meteor.call('records.update', this._id, firstname, surname, gender, dob);
+
+        // Clear form
+        target.firstname.value = '';
+        target.surname.value = '';
+        target.gender.value = '';
+        target.dob.value = '';
+    }
 });
