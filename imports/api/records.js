@@ -76,4 +76,29 @@ Meteor.methods({
 
         Records.update(recordId, { $set: { private: setToPrivate } });
     },
+    'records.update'(id, firstname, surname, gender, dob) {
+        // input validation
+        check(firstname, String);
+        check(surname, String);
+        check(gender, String);
+        check(dob, String);
+
+        // Make sure the user is logged in before inserting a record
+        if (! Meteor.userId()) {
+            throw new Meteor.Error('not-authorized');
+        }
+
+        Records.update(
+            id, {
+                $set: {
+                    firstname : firstname,
+                    surname : surname,
+                    gender : gender,
+                    dob : dob,
+                    createdAt: new Date(), // current time
+                    owner: Meteor.userId(),
+                    username: Meteor.user().username,
+                },
+            });
+    },
 });
