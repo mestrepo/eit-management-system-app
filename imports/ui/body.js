@@ -9,7 +9,6 @@ import './body.html';
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
-    this.checkedState = new ReactiveDict();
     Meteor.subscribe('records');
 });
 
@@ -17,8 +16,8 @@ Template.body.helpers({
     records() {
         const instance = Template.instance();
 
-        if (instance.checkedState.get('deleteChecked')) {
-            instance.checkedState.set('deleteChecked', false); // reset delete button checked state
+        if (instance.state.get('deleteChecked')) {
+            instance.state.set('deleteChecked', false); // reset delete button checked state
             const checkedRecords = Records.find({ 'checked': true });
             // securely delete all check boxed records
             checkedRecords.forEach(function(cr) {
@@ -65,7 +64,7 @@ Template.body.events({
         instance.state.set('hideChecked', event.target.checked);
     },
     'click .delete-checked': function(event, instance){
-        instance.checkedState.set('deleteChecked', event.target.name === 'delete'); // set delete state
+        instance.state.set('deleteChecked', event.target.name === 'delete'); // set delete state
     },
     'click #edit-records'(event) {
         // Prevent default browser form submit
