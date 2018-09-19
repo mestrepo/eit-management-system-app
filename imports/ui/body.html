@@ -29,13 +29,16 @@
     <ul>
         <table>
             <tr>
+                <th>#</th>
                 <th>firstname</th>
                 <th>surname</th>
                 <th>gender</th>
                 <th>dob</th>
+                <th>username</th>
+                <th>actions</th>
             </tr>
             {{#each records}}
-                <tr>{{> record}}</tr>
+                {{> record}}
             {{/each}}
         </table>
     </ul>
