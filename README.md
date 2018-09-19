@@ -1,9 +1,8 @@
 # About
 - Build an EIT Management App with Meteor.
-
 - Fields: First name, Lastname, Date of Birth & Gender.
-
-- Deadline: Monday @ 8am; 17 Sept 2018
+- Deadline: Wednesday @ 8am; 19 Sept 2018
+- http://bit.ly/Tech_Submit_HWs
 
 # EIT Management System(MS)
 
