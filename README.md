@@ -63,8 +63,8 @@ Also,
 Also, 
 - [x] support user accounts.
 - [x] deploy to server
-- [ ] make EIT table aligned with content
-- [ ] improve design
+- [x] make EIT table aligned with content
+- [x] improve design
 - [ ] refactor un-used CSS
 
 # Application Structure
