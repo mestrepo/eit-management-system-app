@@ -1,46 +1,47 @@
 <body>
-<div class="container">
-    <header>
-        <h1>EIT Management System</h1>
+    <div class="container">
+        <header>
+            <h1>EIT Management System</h1>
 
-        {{> loginButtons}}
+            {{> loginButtons}}
+
+            {{#if currentUser}}
+                <button class="delete-checked" type="button" name="delete">Delete</button>
+
+                <h1>EIT count: {{incompleteCount}}</h1>
+
+                <label class="hide-checked">
+                    <input type="checkbox" />
+                    Hide checked Records
+                </label>
+
+                <form class="new-record" id="new-record-for-edit">
+                    <input type="text" name="firstname" placeholder="Type your firstname"/>
+                    <input type="text" name="surname" placeholder="Type your surname"/>
+                    <input type="text" name="gender" placeholder="Type your gender"/>
+                    <input type="text" name="dob" placeholder="Type your dob"/>
+                    <input type="submit" value="Submit"/>
+                </form>
+            {{/if}}
+        </header>
 
         {{#if currentUser}}
-            <button class="delete-checked" type="button" name="delete">Delete</button>
-
-            <h1>EIT count: {{incompleteCount}}</h1>
-
-            <label class="hide-checked">
-                <input type="checkbox" />
-                Hide checked Records
-            </label>
-
-            <form class="new-record" id="new-record-for-edit">
-                <input type="text" name="firstname" placeholder="Type your firstname"/>
-                <input type="text" name="surname" placeholder="Type your surname"/>
-                <input type="text" name="gender" placeholder="Type your gender"/>
-                <input type="text" name="dob" placeholder="Type your dob"/>
-                <input type="submit" value="Submit"/>
-            </form>
+            <ul class="{{#if private}}private{{/if}}">
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>firstname</th>
+                        <th>surname</th>
+                        <th>gender</th>
+                        <th>dob</th>
+                        <th>username</th>
+                        <th>actions</th>
+                    </tr>
+                    {{#each records}}
+                        {{> record}}
+                    {{/each}}
+                </table>
+            </ul>
         {{/if}}
-    </header>
-
-
-    <ul>
-        <table>
-            <tr>
-                <th>#</th>
-                <th>firstname</th>
-                <th>surname</th>
-                <th>gender</th>
-                <th>dob</th>
-                <th>username</th>
-                <th>actions</th>
-            </tr>
-            {{#each records}}
-                {{> record}}
-            {{/each}}
-        </table>
-    </ul>
-</div>
+    </div>
 </body>
