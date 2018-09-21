@@ -1,30 +1,37 @@
 <template name="record">
     <tr class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
-        <td>
-            <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
-        </td>
-        <td>{{firstname}}</td>
-        <td>{{surname}}</td>
-        <td>{{gender}}</td>
-        <td>{{dob}}</td>
-        <td>
-            <span class="text"><strong>{{username}}</strong></span>
-        </td>
-        <td>
-
-        {{#if isOwner}}
-            <button class="delete">&times;</button>
-
-            <input type="button" id="edit-records" value="edit" />
-            <button class="toggle-private">
-                {{#if private}}
-                    Private
-                {{else}}
-                    Public
-                {{/if}}
-            </button>
+        {{#if and isOwner currentUser}}
+            <td>
+                <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+            </td>
+        {{else}}
+            <td></td>
         {{/if}}
 
-        </td>
+        {{#if currentUser}}
+            <td>{{firstname}}</td>
+            <td>{{surname}}</td>
+            <td>{{gender}}</td>
+            <td>{{dob}}</td>
+            <td>
+                <span class="text"><strong>{{username}}</strong></span>
+            </td>
+            <td>
+
+            {{#if isOwner}}
+                <button class="delete">&times;</button>
+
+                <input type="button" id="edit-records" value="edit" />
+                <button class="toggle-private">
+                    {{#if private}}
+                        Private
+                    {{else}}
+                        Public
+                    {{/if}}
+                </button>
+            {{/if}}
+
+            </td>
+        {{/if}}
     </tr>
 </template>
