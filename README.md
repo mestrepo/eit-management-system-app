@@ -124,3 +124,4 @@ service. Here are the steps to host your app
 4. [Markdown Code and syntax highlighting](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)
 5. [Meteor blaze logic](https://stackoverflow.com/a/36503409/773257) 
 6. [Datetime picker](https://stackoverflow.com/a/28886706/773257)
+7. [Radio buttons for forms](https://www.tutorialspoint.com/meteor/meteor_forms.htm)
