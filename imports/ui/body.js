@@ -28,11 +28,11 @@ Template.body.helpers({
         }
         if (instance.state.get('hideChecked')) {
             // If hide completed is checked, filter records
-            return Records.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
+            return Records.find({ checked: { $ne: true } });
         }
         // Otherwise, return all of the records
-        // Show newest records at the top
-        return Records.find({}, {sort: {createdAt: -1}});
+        // Show oldest records at the top
+        return Records.find({});
     },
     incompleteCount() {
         return Records.find({ checked: { $ne: true } }).count();
