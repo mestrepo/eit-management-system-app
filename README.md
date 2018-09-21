@@ -67,6 +67,12 @@ Also,
 - [x] improve design
 - [ ] refactor un-used CSS
 
+_Updated requirements_ 
+- [x] Add date selector
+- [x] Add radio button for gender
+- [x] do form validation for EDIT button.
+- [x] make checkbox appear for only current user account
+
 # Application Structure
 You may structure your app however you like, but it's highly recommended that you use 
 the same structure as the simple-todos app.
