@@ -70,7 +70,7 @@ Also,
 _Updated requirements_ 
 - [x] Add date selector
 - [x] Add radio button for gender
-- [x] do form validation for EDIT button.
+- [x] optimistic form validation for EDIT button(string, including empty string, input allowed).
 - [x] make checkbox appear for only current user account
 
 # Application Structure
