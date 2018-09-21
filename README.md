@@ -121,4 +121,5 @@ service. Here are the steps to host your app
 1. [Markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables)
 2. [Meteor Special directories](https://guide.meteor.com/structure.html#special-directories)
 3. [Serving static content in meteor projects](https://stackoverflow.com/a/21341394/773257)
-4. [Markdown Code and syntax highlighting](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code) 
+4. [Markdown Code and syntax highlighting](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)
+5. [Meteor blaze logic](https://stackoverflow.com/a/36503409/773257) 
