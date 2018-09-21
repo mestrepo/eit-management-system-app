@@ -125,3 +125,4 @@ service. Here are the steps to host your app
 5. [Meteor blaze logic](https://stackoverflow.com/a/36503409/773257) 
 6. [Datetime picker](https://stackoverflow.com/a/28886706/773257)
 7. [Radio buttons for forms](https://www.tutorialspoint.com/meteor/meteor_forms.htm)
+8. [Check one radio button out of many](https://stackoverflow.com/a/5419479/773257)
