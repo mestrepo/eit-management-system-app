@@ -11,7 +11,9 @@ Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
     Meteor.subscribe('records');
 });
-
+Template.registerHelper('and',(a,b)=>{
+    return a && b;
+});
 Template.body.helpers({
     records() {
         const instance = Template.instance();
