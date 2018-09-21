@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
+import { Match } from 'meteor/check'
 
 export const Records = new Mongo.Collection('records');
 
@@ -19,11 +20,15 @@ if (Meteor.isServer) {
 
 Meteor.methods({
     'records.insert'(firstname, surname, gender, dob) {
+        const NonEmptyString = Match.Where((x) => {
+            check(x, String);
+            return x.length > 0;
+        });
         // input validation
-        check(firstname, String);
-        check(surname, String);
-        check(gender, String);
-        check(dob, String);
+        check(firstname, NonEmptyString);
+        check(surname, NonEmptyString);
+        check(gender, NonEmptyString);
+        check(dob, NonEmptyString);
 
         // Make sure the user is logged in before inserting a record
         if (! Meteor.userId()) {
