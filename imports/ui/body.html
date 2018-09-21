@@ -18,9 +18,14 @@
                 <form class="new-record" id="new-record-for-edit">
                     <input type="text" name="firstname" placeholder="Type your firstname"/>
                     <input type="text" name="surname" placeholder="Type your surname"/>
-                    <input type = "radio" name = "gender" value = "female">female
-                    <input type = "radio" name = "gender" value = "male">male
-                    <input type = "radio" name = "gender" value = "other">other
+                    <div class="wrapper-class">
+                        <input type = "radio" name = "gender" value = "female" id="female">
+                        <label for="female">female</label>
+                        <input type = "radio" name = "gender" value = "male" id="male">
+                        <label for="male">male</label>
+                        <input type = "radio" name = "gender" value = "other" id="other">
+                        <label for="other">other</label>
+                    </div>
                     <div class="input-group datetimepicker">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         <input name="dob" class="set-due-date form-control" type="text" id="closingdate" placeholder="Type your dob"/>
