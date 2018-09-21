@@ -22,3 +22,7 @@ Template.record.events({
         Meteor.call('records.setPrivate', this._id, !this.private);
     },
 });
+
+Template.record.rendered = function(){
+    $('.datetimepicker').datetimepicker();
+};

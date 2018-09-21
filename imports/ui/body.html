@@ -19,7 +19,11 @@
                     <input type="text" name="firstname" placeholder="Type your firstname"/>
                     <input type="text" name="surname" placeholder="Type your surname"/>
                     <input type="text" name="gender" placeholder="Type your gender"/>
-                    <input type="text" name="dob" placeholder="Type your dob"/>
+                    <!--<input type="text" name="dob" placeholder="Type your dob"/>-->
+                    <div class="input-group datetimepicker">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input name="dob" class="set-due-date form-control" type="text" id="closingdate" placeholder="Type your dob"/>
+                    </div>
                     <input type="submit" value="Submit"/>
                 </form>
             {{/if}}
