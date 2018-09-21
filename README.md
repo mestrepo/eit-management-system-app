@@ -126,3 +126,4 @@ service. Here are the steps to host your app
 6. [Datetime picker](https://stackoverflow.com/a/28886706/773257)
 7. [Radio buttons for forms](https://www.tutorialspoint.com/meteor/meteor_forms.htm)
 8. [Check one radio button out of many](https://stackoverflow.com/a/5419479/773257)
+9. [in-line radio buttons](https://stackoverflow.com/a/41042454/773257)
