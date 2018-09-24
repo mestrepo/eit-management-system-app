@@ -73,6 +73,10 @@ _Updated requirements_
 - [x] ~~optimistic form validation for EDIT button(string, including empty string, input allowed).~~
 - [x] make checkbox appear for only current user account
 - [x] do form validation for EDIT button.
+- [ ] EDIT record
+    - [ ] clicking a record's *EDIT BUTTON* populates row information in table; 
+    - [ ] EDIT by changing table information; 
+    - [ ] SUBMIT edit by clicking *submit button* 
 
 # Application Structure
 You may structure your app however you like, but it's highly recommended that you use 
