@@ -40,7 +40,7 @@ Template.body.helpers({
 });
 
 Template.body.events({
-    'submit .new-record'(event) {
+    'submit .new-record'(event, instance) {
         // Prevent default browser form submit
         event.preventDefault();
 
@@ -53,8 +53,18 @@ Template.body.events({
         const gender = target.gender.value;
         const dob = target.dob.value;
 
-        // Insert a record into the collection
-        Meteor.call('records.insert', firstname, surname, gender, dob);
+        if (instance.state.get('readyToEdit')) {
+            // update a record into the collection
+            Meteor.call('records.update', instance.state.get('editId'), firstname, surname, gender, dob);
+
+            // reset edit
+            instance.state.set('readyToEdit', false);
+            instance.state.set('editId', undefined);
+        }
+        else {
+            // Insert a record into the collection
+            Meteor.call('records.insert', firstname, surname, gender, dob);
+        }
 
         // Clear form
         target.firstname.value = '';
@@ -68,26 +78,26 @@ Template.body.events({
     'click .delete-checked': function(event, instance){
         instance.state.set('deleteChecked', event.target.name === 'delete'); // set delete state
     },
-    'click #edit-records'(event) {
+    'click #edit-records'(event, instance) {
         // Prevent default browser form submit
         event.preventDefault();
 
+        const record = Records.findOne(this._id);
+
         // Get value from form element
-        const target = document.getElementById('new-record-for-edit');
+        const editTarget = document.getElementById('new-record-for-edit');
+        // console.log("editTarget id: " + editTarget.name);
 
-        // set the values
-        const firstname = target.firstname.value;
-        const surname = target.surname.value;
-        const gender = target.gender.value;
-        const dob = target.dob.value;
+        if (event.target.value === 'edit') {
+            // set the values
+            editTarget.firstname.value = record.firstname;
+            editTarget.surname.value = record.surname;
+            editTarget.gender.value = record.gender;
+            editTarget.dob.value = record.dob;
+        }
 
-        // Insert a record into the collection
-        Meteor.call('records.update', this._id, firstname, surname, gender, dob);
-
-        // Clear form
-        target.firstname.value = '';
-        target.surname.value = '';
-        target.gender.value = '';
-        target.dob.value = '';
-    }
+        // set ready to edit state
+        instance.state.set('readyToEdit', true);
+        instance.state.set('editId', this._id);
+    },
 });
