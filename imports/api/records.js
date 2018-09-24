@@ -18,17 +18,21 @@ if (Meteor.isServer) {
     });
 }
 
+function fieldValidation(firstname, surname, gender, dob) {
+    const NonEmptyString = Match.Where((x) => {
+        check(x, String);
+        return x.length > 0;
+    });
+    // input validation
+    check(firstname, NonEmptyString);
+    check(surname, NonEmptyString);
+    check(gender, NonEmptyString);
+    check(dob, NonEmptyString);
+}
+
 Meteor.methods({
     'records.insert'(firstname, surname, gender, dob) {
-        const NonEmptyString = Match.Where((x) => {
-            check(x, String);
-            return x.length > 0;
-        });
-        // input validation
-        check(firstname, NonEmptyString);
-        check(surname, NonEmptyString);
-        check(gender, NonEmptyString);
-        check(dob, NonEmptyString);
+        fieldValidation(firstname, surname, gender, dob);
 
         // Make sure the user is logged in before inserting a record
         if (! Meteor.userId()) {
@@ -82,11 +86,7 @@ Meteor.methods({
         Records.update(recordId, { $set: { private: setToPrivate } });
     },
     'records.update'(id, firstname, surname, gender, dob) {
-        // input validation
-        check(firstname, String);
-        check(surname, String);
-        check(gender, String);
-        check(dob, String);
+        fieldValidation(firstname, surname, gender, dob);
 
         // Make sure the user is logged in before inserting a record
         if (! Meteor.userId()) {
