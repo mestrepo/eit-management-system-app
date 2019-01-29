@@ -1,0 +1,31 @@
+mutation addEIT {
+  addRecord(text: "Meet Aaron") {
+    _id
+    text
+    createdAt
+    checked
+  }
+}
+
+mutation deleteEIT {
+  deleteRecord(id: "c7eXbh8nhMYTBB82w")
+}
+
+query getEIT {
+  getOneRecord(id: "c7eXbh8nhMYTBB82w") {
+    _id
+    text
+    createdAt
+    checked
+  }
+}
+
+query getEITs {
+  getAllRecords {
+    _id
+    text
+    createdAt
+    checked
+  }
+}
+

@@ -8,8 +8,17 @@
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
-    "@babel/runtime": "7.0.0-beta.55",
-    "meteor-node-stubs": "^0.4.1"
+    "@babel/runtime": "^7.3.1",
+    "apollo-server-express": "^2.3.3",
+    "bcrypt": "^3.0.3",
+    "casual": "^1.6.0",
+    "graphql": "^14.1.1",
+    "graphql-iso-date": "^3.6.1",
+    "lodash": "^4.17.11",
+    "meteor-node-stubs": "^0.4.1",
+    "node-fetch": "^2.3.0",
+    "sequelize": "^4.42.0",
+    "sqlite3": "^4.0.6"
   },
   "meteor": {
     "mainModule": {

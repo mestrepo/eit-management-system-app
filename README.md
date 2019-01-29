@@ -128,6 +128,41 @@ service. Here are the steps to host your app
 # Question
 ![alt text](public/images/meteor-hw.jpg "Meteor Assignment Question")
 
+# Extension
+
+### TODO - CRUD with GraphQL for TODOs
+1. Create schema
+2. Create resolvers
+3. Setup GraphQL servers(need schemas and resolvers to setup server)
+			
+		meteor add apollo && 
+		meteor npm install --save apollo-server-express && 
+		meteor npm install --save graphql-iso-date && 
+		meteor npm install --save sequelize && 
+		meteor npm install --save node-fetch && 
+		meteor npm install --save casual && 
+		meteor npm install --save lodash && 
+		meteor npm install --save graphql && 
+		meteor npm install --save sqlite3
+	
+4. Launch GraphQL playground
+5. Write CRUD queries
+
+Schema Actions
+
+a. addEIT
+b. updateEIT
+ 
+
+### [Optional] install in-browser MongoDB
+`meteor add msavin:mongol`
+
+### Fix dependencies issues
+meteor update && meteor npm install --save @babel/runtime
+meteor update --all-packages
+meteor npm install --save bcrypt
+meteor npm install --save @babel/runtime@latest
+
 # References
 1. [Markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables)
 2. [Meteor Special directories](https://guide.meteor.com/structure.html#special-directories)
