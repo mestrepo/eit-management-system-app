@@ -128,7 +128,15 @@ service. Here are the steps to host your app
 # Question
 ![alt text](public/images/meteor-hw.jpg "Meteor Assignment Question")
 
-# Extension
+# Project Extension
+
+Add GraphQL API for EIT operations:
+- EIT schema
+- add EIT
+- delete EIT
+- update EIT
+- show all EITs
+- show a specific EIT
 
 ### TODO - CRUD with GraphQL for TODOs
 1. Create schema

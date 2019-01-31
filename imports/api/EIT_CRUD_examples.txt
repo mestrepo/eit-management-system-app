@@ -1,4 +1,89 @@
 mutation addEIT {
+  addEIT(
+    firstname: "Moses",
+    surname: "2031",
+    gender: "M",
+    dob: "12/12/1990",
+    ownerid: "moses.eit",
+  ) {
+    _id
+		firstname
+		surname
+		gender
+    dob
+    ownerid
+  }
+}
+
+mutation addEIT_two {
+    addEIT(
+    firstname: "Chevez",
+    surname: "P.",
+    gender: "M",
+    dob: "12/12/1980",
+    ownerid: "chevez.eit"
+  ) {
+    _id
+		firstname
+		surname
+		gender
+    dob
+    ownerid
+  }
+}
+
+query getOneEIT{
+  getOneEIT(id: "AwhN8LEDQ9jfuGNxW") {
+    _id
+		firstname
+		surname
+		gender
+    dob
+    ownerid
+  }
+}
+
+query getAllEITs {
+  getAllEITs {
+    _id
+		firstname
+		surname
+		gender
+    dob
+    ownerid
+  }
+}
+
+mutation deleteEIT {
+  deleteEIT(id: "7X7365BL8DxC9W53i") {
+    _id
+		firstname
+		surname
+		gender
+    dob
+    ownerid
+  }
+}
+
+mutation updateEIT{
+  updateEIT(
+    id: "AwhN8LEDQ9jfuGNxW",
+    firstname:"Updated"
+    surname: "Done"
+    gender: "WOW!"
+    dob: "3-9-2003"
+    ownerid: "updated.id"
+  ) {
+    _id
+		firstname
+		surname
+		gender
+    dob
+    ownerid
+  }
+}
+
+mutation addRecord {
   addRecord(text: "Meet Aaron") {
     _id
     text
@@ -7,12 +92,12 @@ mutation addEIT {
   }
 }
 
-mutation deleteEIT {
-  deleteRecord(id: "c7eXbh8nhMYTBB82w")
+mutation deleteRecord {
+  deleteRecord(id: "MWdjy9RRisCjt3DLY")
 }
 
-query getEIT {
-  getOneRecord(id: "c7eXbh8nhMYTBB82w") {
+query getRecord {
+  getOneRecord(id: "THtZbrCCcA3DaZExp") {
     _id
     text
     createdAt
@@ -20,7 +105,7 @@ query getEIT {
   }
 }
 
-query getEITs {
+query getRecords {
   getAllRecords {
     _id
     text
@@ -29,3 +114,18 @@ query getEITs {
   }
 }
 
+mutation updateRecord {
+  updateRecord(
+    id: "THtZbrCCcA3DaZExp",
+    firstname: "updatedRecord",
+    surname: "updatedSurname",
+    gender: "updatedGender",
+    dob: "11/11/1110"
+  ) {
+		_id
+    firstname
+    surname
+    gender
+    dob
+  }
+}
