@@ -24,3 +24,4 @@ twbs:bootstrap
 tsega:bootstrap3-datetimepicker
 msavin:mongol
 apollo
+practicalmeteor:mocha

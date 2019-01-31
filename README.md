@@ -158,9 +158,23 @@ Add GraphQL API for EIT operations:
 
 Schema Actions
 
-a. addEIT
-b. updateEIT
- 
+    a. addEIT
+    b. updateEIT
+    c. deleteEIT
+    d. getEITs
+    e. getOneEIT
+    
+### TODO - test EIT methods [with meteor](https://www.meteor.com/tutorials/react/testing)
+1. Install test dependencies
+    
+```    
+    # Install Meteor and npm dependencies
+    meteor add practicalmeteor:mocha
+    meteor npm install --save-dev chai
+    
+    # Run meteor test with a driver package
+    TEST_WATCH=1 meteor test --driver-package meteortesting:mocha --port 8903  
+ ```        
 
 ### [Optional] install in-browser MongoDB
 `meteor add msavin:mongol`
