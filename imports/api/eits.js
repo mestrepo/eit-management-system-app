@@ -35,7 +35,7 @@ Meteor.methods({
         fieldValidation(firstname, surname, gender, dob);
 
         // Make sure the user is logged in before inserting a eit
-        if (! Meteor.userId()) {
+        if (! this.userId) {
             throw new Meteor.Error('not-authorized');
         }
 
@@ -45,15 +45,15 @@ Meteor.methods({
             gender,
             dob,
             createdAt: new Date(), // current time
-            owner: Meteor.userId(),
-            ownerid: Meteor.user().username,
+            owner: this.userId,
+            ownerid: Meteor.users.findOne(this.userId).username, //Meteor.user().username,
         });
     },
     'eits.remove'(eitId) {
         check(eitId, String);
 
         const eit = Eits.findOne(eitId);
-        if (eit.private && eit.owner !== Meteor.userId()) {
+        if (eit.private && eit.owner !== this.userId) {
             // If the eit is private, make sure only the owner can delete it
             throw new Meteor.Error('not-authorized');
         }
@@ -65,7 +65,7 @@ Meteor.methods({
         check(setChecked, Boolean);
 
         const eit = Eits.findOne(eitId);
-        if (eit.private && eit.owner !== Meteor.userId()) {
+        if (eit.private && eit.owner !== this.userId) {
             // If the eit is private, make sure only the owner can check it off
             throw new Meteor.Error('not-authorized');
         }
@@ -79,7 +79,7 @@ Meteor.methods({
         const eit = Eits.findOne(eitId);
 
         // Make sure only the eit owner can make a eit private
-        if (eit.owner !== Meteor.userId()) {
+        if (eit.owner !== this.userId) {
             throw new Meteor.Error('not-authorized');
         }
 
@@ -89,7 +89,7 @@ Meteor.methods({
         fieldValidation(firstname, surname, gender, dob);
 
         // Make sure the user is logged in before inserting a eit
-        if (! Meteor.userId()) {
+        if (! this.userId) {
             throw new Meteor.Error('not-authorized');
         }
 
@@ -101,8 +101,8 @@ Meteor.methods({
                     gender : gender,
                     dob : dob,
                     createdAt: new Date(), // current time
-                    owner: Meteor.userId(),
-                    ownerid: Meteor.user().username,
+                    owner: this.username,
+                    ownerid: this.userId,
                 },
             });
     },
